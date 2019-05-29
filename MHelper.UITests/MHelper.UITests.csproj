@@ -32,12 +32,6 @@
     <PackageReference Include="Xamarin.UITest" Version="2.2.7" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MHelper.iOS\MHelper.iOS.csproj">
-      <Project>{0918B47F-F62E-498D-B43F-0E0C655E5675}</Project>
-      <Name>MHelper.iOS</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\MHelper.Android\MHelper.Android.csproj">
       <Project>{EFB0C1E5-7B01-4B77-93D3-791B1AB825D2}</Project>
       <Name>MHelper.Android</Name>

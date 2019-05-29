@@ -6,9 +6,16 @@ using Refit;
 
 namespace MHelper.Services
 {
+    [Headers("Accept: application/json")]
     public interface IHttpApi
-    {
-        [Get("/basic-auth/{username}/{password}")]
-        Task<AuthResult> BasicAuth(string username, string password, [Header("Authorization")] string authToken, CancellationToken ctx);
+    { 
+        [Post("/derivative")]
+        Task<EvaluateResponse> GetDerivative([Body] EvaluateRequest request);
+
+        [Post("/calculate")]
+        Task<EvaluateResponse> GetExpressionValue([Body] EvaluateRequest request);
+
+        [Post("/integrate")]
+        Task<EvaluateResponse> GetIntegral([Body] EvaluateRequest request);
     }
 }

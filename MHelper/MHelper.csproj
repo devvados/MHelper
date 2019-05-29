@@ -11,13 +11,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
     <PackageReference Include="Refit" Version="4.6.107" />
     <PackageReference Include="CSharpMath" Version="0.2.0" />
+    <PackageReference Include="CSharpMath.Forms" Version="0.2.1" />
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />
+    <PackageReference Include="Xamarin.Forms.Essentials.Controls" Version="1.1.1" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\" />
+    <Folder Include="State\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\ItemDetailPage.xaml" />
@@ -25,5 +29,7 @@
   <ItemGroup>
     <Compile Remove="Views\ItemDetailPage.xaml.cs" />
     <Compile Remove="ViewModels\ItemDetailViewModel.cs" />
+    <Compile Remove="State\StateCondition.cs" />
+    <Compile Remove="State\StateContainer.cs" />
   </ItemGroup>
 </Project>

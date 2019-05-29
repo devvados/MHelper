@@ -8,25 +8,26 @@ namespace MHelper.Services
 {
     public class MHelperApi : IHttpApi
     {
-        public Task<AuthResult> BasicAuth(string username, string password, [Header("Authorization")] string authToken, CancellationToken ctx)
+        public static IHttpApi apiService;
+        static string baseUrl = "http://10.0.2.2:8080";
+
+        public static IHttpApi GetApiService()
+        {
+            apiService = RestService.For<IHttpApi>(baseUrl);
+            return apiService;
+        }
+
+        public Task<EvaluateResponse> GetDerivative([Body] EvaluateRequest request)
         {
             throw new NotImplementedException();
         }
 
-        [Get("/derivative/{expression}")]
-        public Task<HttpResponseMessage> GetDerivative([Header("Derivative")] string expression, CancellationToken ctx)
+        public Task<EvaluateResponse> GetExpressionValue([Body] EvaluateRequest request)
         {
             throw new NotImplementedException();
         }
 
-        [Get("/calculate/{expression}")]
-        public Task<HttpResponseMessage> GetExpressionValue([Header("Calculate")] string expression, CancellationToken ctx)
-        {
-            throw new NotImplementedException();
-        }
-
-        [Get("/integrate/{expression}")]
-        public Task<HttpResponseMessage> GetIntegral([Header("Integral")] string expression, CancellationToken ctx)
+        public Task<EvaluateResponse> GetIntegral([Body] EvaluateRequest request)
         {
             throw new NotImplementedException();
         }

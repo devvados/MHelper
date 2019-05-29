@@ -16,7 +16,8 @@ namespace MHelper.Services
             items = new List<Item>();
             var mockItems = new List<Item>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Derivative", Description="Derivative functionality.", ViewModel = new DerivativeViewModel() }
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Derivative", Description="Derivative functionality" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Integration", Description="Integration functionality" }
             };
 
             foreach (var item in mockItems)
